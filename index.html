@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/styles/style.css" />
+    <script src="assets/js/svgComponents.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jsmediatags/3.9.5/jsmediatags.min.js"
+      integrity="sha512-YsR46MmyChktsyMMou+Bs74oCa/CDdwft7rJ5wlnmDzMj1mzqncsfJamEEf99Nk7IB0JpTMo5hS8rxB49FUktQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <title>Music player</title>
+  </head>
+  <body>
+    <main>
+      <section class="music-player">
+        <div class="player-container">
+          <div class="song-tags">
+            <span id="song-title"></span>
+            <span id="song-artist"></span>
+          </div>
+          <br />
+          <div class="image-container">
+            <img
+              src="assets/images/default-image.webp"
+              alt="defaul image of player"
+              id="song-image"
+            />
+          </div>
+          <div class="player-actions">
+            <label for="input-file" title="add song">
+              <input
+                id="input-file"
+                type="file"
+                accept="audio/*"
+                hidden
+              /><add-icon></add-icon>
+            </label>
+            <button id="playlist-btn" title="view playlist">
+              <playlist-icon></playlist-icon>
+            </button>
+          </div>
+          <div class="player-controls">
+            <div class="time-line">
+              <div class="song-time">
+                <span id="current-time">0:00</span>
+                <span id="duration-time">0:00</span>
+              </div>
+              <input
+                id="song-time-range"
+                type="range"
+                min="0"
+                max="100"
+                value="0"
+              />
+              <audio id="song-audio" src=""></audio>
+            </div>
+            <ul class="player-buttons">
+              <li id="back-btn"><back-icon></back-icon></li>
+              <li id="play-stop-btns">
+                <play-icon></play-icon>
+                <stop-icon></stop-icon>
+              </li>
+              <li id="skip-btn"><skip-icon></skip-icon></li>
+            </ul>
+          </div>
+        </div>
+        <div id="playlist">
+          <ul id="song-list"></ul>
+        </div>
+      </section>
+    </main>
+    <script type="module" src="assets/js/app.js"></script>
+  </body>
+</html>
